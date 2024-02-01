@@ -69,3 +69,72 @@ Examples:
   cdiff original.txt modified.txt
   cdiff -c -a original.txt modified.txt
   cdiff -o output.diff -n 5 original.txt modified.txt
+#cdiff
+Простая консольная утилита для вычисления разницы между двумя файлами, написанная на C++.
+
+Сборка
+Поддерживаемые ОС
+Приложение было протестировано на Windows и Linux, но оно должно работать и на других POSIX-совместимых операционных системах, таких как macOS и FreeBSD.
+
+Поддерживаемые компиляторы
+Для сборки проекта рекомендуются следующие компиляторы: GCC, Clang и MinGW. Хотя Microsoft Visual C++ также поддерживается, Makefile для сборки с MSVC не предоставляется.
+
+Для пользователей, которые хотят собрать проект с помощью MSVC, есть два варианта:
+
+Создать новый проект C++ в Visual Studio и добавить все файлы из папки src (рекомендуется).
+Написать Makefile специально для MSVC (расширенный вариант):
+Создать новый проект C++ в Visual Studio и добавить все файлы из папки src (рекомендуется).
+Написать Makefile специально для MSVC (расширенный вариант).
+Пошаговые инструкции
+Установите необходимые инструменты
+В следующих примерах показано, как установить GCC и make на несколько популярных дистрибутивов Linux.
+
+Debian, Ubuntu
+
+sudo apt update
+sudo apt install build-essential
+Fedora
+
+sudo dnf update
+sudo dnf install make automake gcc gcc-c++
+Arch Linux
+
+sudo pacman -Syu
+sudo pacman -S base-devel
+MinGW необходим для сборки проектов на C и C++ под Windows. На официальном сайте представлено множество версий для различных систем.
+
+На сайте winlibs.com размещены автономные сборки для Windows, а также инструкции по установке. Сборка проекта на Windows-системах была протестирована со следующей версией MinGW:
+
+Win32 - i686 (32-bit)
+Библиотека Threading: POSIX
+Библиотека времени выполнения: MSVCRT
+Клонируйте репозиторий:
+
+git clone https://github.com/y-govor/cdiff.git
+cd cdiff
+Создайте каталог bin:
+
+mkdir bin
+Используйте утилиту make для сборки проекта:
+
+make
+Чтобы скомпилировать с помощью Clang вместо GCC, откройте Makefile и замените строку CXX = g++ на CXX = clang++. Или же укажите значение переменной CXX в команде:
+
+make CXX=clang++
+Примечание для пользователей MinGW: вам может понадобиться использовать mingw32-make вместо make.
+
+Использование
+Использование: cdiff [options] [files]
+
+Описание:
+  Сравнивает два файла и отображает разницу.
+
+
+Опции:
+  -h, --help Вывести сообщение о помощи и выйти.  -c, --color Включить поддержку цветов при печати на консоль.
+  -a, --force-ansi Использовать аварийные коды ANSI для цветов в системах Windows.
+  -o, --out-file FILE Перенаправить вывод в файл вместо консоли.  -n, --lines NUM Количество строк для контекста (по умолчанию 3).Файлы:  original Оригинальный файл.
+  modified Новый (измененный) файл.
+
+Примеры:
+  cdiff original.txt modified.txtcdiff -c -a original.txt modified.txtcdiff -o output.diff -n 5 original.txt modified.txt
