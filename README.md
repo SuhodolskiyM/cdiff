@@ -33,9 +33,7 @@ winlibs.com hosts standalone builds for Windows, as well as installation instruc
 Win32 - i686 (32-bit)
 Threading library: POSIX
 Runtime library: MSVCRT
-Clone the repository:
 
-git clone https://github.com/y-govor/cdiff.git
 cd cdiff
 Create the bin directory:
 
@@ -110,9 +108,7 @@ MinGW необходим для сборки проектов на C и C++ по
 Win32 - i686 (32-bit)
 Библиотека Threading: POSIX
 Библиотека времени выполнения: MSVCRT
-Клонируйте репозиторий:
 
-git clone https://github.com/y-govor/cdiff.git
 cd cdiff
 Создайте каталог bin:
 
