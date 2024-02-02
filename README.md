@@ -69,6 +69,8 @@ Examples:
   cdiff original.txt modified.txt
   cdiff -c -a original.txt modified.txt
   cdiff -o output.diff -n 5 original.txt modified.txt
+
+
 #cdiff
 Простая консольная утилита для вычисления разницы между двумя файлами, написанная на C++.
 
